@@ -13,7 +13,8 @@
 // =================================================
 // generate a random guess number between the value 19 and 120
 // generate random number, 4x, one for each cystal values: randomize between 1 and 12
-// create an event that captures crystal value
+// create an event that captures crystal value on player click event
+// add new clicked crystal value to extisting click value
 // store and total all crystal values selected during game
 // compare total crystal value to random guess number.
 // if === display 'winner' --> game over and reset the games cystal values and random guess number
@@ -42,9 +43,10 @@ var lossCounter = 0;
 // random number for crystal to total to
 var numberGenerate = 0;
 
-// total crystal value from click event score
-var CrystalTotal = 0;
+// current total crystal value from player click events
+var crystalTotal = 0;
 
+// current game individual crystal value from random number generator
 var crystalValue = [];
 
 // minimum number value for random number generator
@@ -85,15 +87,26 @@ function cystalValueAssign(min, max) {
 // generate random number (1 to 12) one for each cystal values
 	var min = 1;
 	var max = 12
-	generateRandomNumber(min, max);
-	console.log(generateRandomNumber);
-	for(i = 0; i < crystalValue.length; i++) {
-		crystalValue[i].addEventListener("click", function(event) {
-	console.log(event);	
-});
+	for(i = 0; i < 4; i++) {
+		generateRandomNumber(min, max);
+console.log("this is crystalValue " + crystalValue[i] + " " + generateRandomNumber);
+		crystalValue.push(numberGenerate);
+console.log(crystalValue);
+}
 
 	}
 
 }
 cystalValueAssign();
+
+
+// Capture cystral value on click and add to crystalTotal value
+function crystalValueAdder () {
+		crystalValue[i].addEventListener("click", function(event) {
+	console.log(event);	
+
+});
+
+
+
 
