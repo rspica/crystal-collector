@@ -1,0 +1,38 @@
+/*font-family: 'Ultra', serif;
+font-family: 'Lekton', sans-serif;
+font-family: 'Bungee Hairline', cursive;*/
+
+body {
+	text-align: center;
+	background: rgb(255, 255, 255);
+}
+
+h1 {
+	font: 2em  'Bungee Hairline', cursive;
+	padding: 20px 0 10px;
+	margin-bottom: 25px;
+	color: rgb(0, 0, 0);
+}
+
+img {
+	max-height: 150px;
+}
+
+.crystal-container {
+	max-width: 600px;
+	max-height: 300px;
+	padding: 50px;
+}
+
+.crystal-1 {
+	border-bottom: 1px solid rgba(0, 0, 0, .5);
+	border-right:  1px solid rgba(0, 0, 0, .5);
+}
+
+.crystal-2 {
+	border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
+
+.crystal-3 {
+	border-right:  1px solid rgba(0, 0, 0, .5);
+}
