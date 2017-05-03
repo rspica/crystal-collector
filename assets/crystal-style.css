@@ -22,9 +22,14 @@ img {
 
 .crystal-container, .crystal-a, .crystal-b, .crystal-c, .crystal-d {
 	max-height: 300px;
+<<<<<<< HEAD
 	height: 100%;
 	padding: 30px;
 	overflow: hidden;
+=======
+	padding: 50px;
+	overflow: auto;
+>>>>>>> f230f827330adf545f78c606e9979f34ec06b856
 }
 
 .crystal-a {

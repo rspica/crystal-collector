@@ -13,7 +13,8 @@
 // =================================================
 // generate a random guess number between the value 19 and 120
 // generate random number, 4x, one for each cystal values: randomize between 1 and 12
-// create an event that captures crystal value
+// create an event that captures crystal value on player click event
+// add new clicked crystal value to extisting click value
 // store and total all crystal values selected during game
 // compare total crystal value to random guess number.
 // if === display 'winner' --> game over and reset the games cystal values and random guess number
@@ -40,10 +41,14 @@ var lossCounter = 0;
 // random number for crystal to total to
 var KeyValueCompare;
 
-// total crystal value from click event score
-var CrystalTotal = 0;
+// current total crystal value from player click events
+var crystalTotal = 0;
 
+<<<<<<< HEAD
 // Array to store random number for each of 4 crystals
+=======
+// current game individual crystal value from random number generator
+>>>>>>> f230f827330adf545f78c606e9979f34ec06b856
 var crystalValue = [];
 
 
@@ -85,15 +90,27 @@ KeyValueCompare = generateRandomNumber(19,120);
 function cystalValueAssign() {
 // generate random number (randomize between 1 and 12) one for each cystal values
 	var min = 1;
+<<<<<<< HEAD
 	var max = 12;
 	for(i = 0; i < 4; i++) {
 		var randomNum = generateRandomNumber(min, max);
 		crystalValue.push(randomNum);
 		valueAdd(randomNum, i);
+=======
+	var max = 12
+	for(i = 0; i < 4; i++) {
+		generateRandomNumber(min, max);
+console.log("this is crystalValue " + crystalValue[i] + " " + generateRandomNumber);
+		crystalValue.push(numberGenerate);
+console.log(crystalValue);
+}
+
+>>>>>>> f230f827330adf545f78c606e9979f34ec06b856
 	}
 }
 cystalValueAssign();
 
+<<<<<<< HEAD
 // function value add assigns the random numbers to each of the four crystal
 function valueAdd(randomNum, i) {
 	console.log("going around " + i + " " + randomNum);
@@ -121,4 +138,16 @@ function doSomething(e) {
     }
     e.stopPropagation();
 }
+=======
+
+// Capture cystral value on click and add to crystalTotal value
+function crystalValueAdder () {
+		crystalValue[i].addEventListener("click", function(event) {
+	console.log(event);	
+
+});
+
+
+
+>>>>>>> f230f827330adf545f78c606e9979f34ec06b856
 
