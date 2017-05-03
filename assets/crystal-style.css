@@ -5,6 +5,8 @@ font-family: 'Bungee Hairline', cursive;*/
 body {
 	text-align: center;
 	background: rgb(255, 255, 255);
+	max-width: 600px;
+	margin: 0 auto;
 }
 
 h1 {
@@ -15,24 +17,25 @@ h1 {
 }
 
 img {
-	max-height: 150px;
+	max-height: 100px;
 }
 
-.crystal-container {
-	max-width: 600px;
+.crystal-container, .crystal-a, .crystal-b, .crystal-c, .crystal-d {
 	max-height: 300px;
-	padding: 50px;
+	height: 100%;
+	padding: 30px;
+	overflow: hidden;
 }
 
-.crystal-1 {
-	border-bottom: 1px solid rgba(0, 0, 0, .5);
-	border-right:  1px solid rgba(0, 0, 0, .5);
+.crystal-a {
+	border-bottom: 1px solid rgba(0, 0, 0, .15);
+	border-right:  1px solid rgba(0, 0, 0, .15);
 }
 
-.crystal-2 {
-	border-bottom: 1px solid rgba(0, 0, 0, .5);
+.crystal-b {
+	border-bottom: 1px solid rgba(0, 0, 0, .15);
 }
 
-.crystal-3 {
-	border-right:  1px solid rgba(0, 0, 0, .5);
+.crystal-c {
+	border-right:  1px solid rgba(0, 0, 0, .15);
 }
