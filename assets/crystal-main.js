@@ -13,8 +13,7 @@
 // =================================================
 // generate a random guess number between the value 19 and 120
 // generate random number, 4x, one for each cystal values: randomize between 1 and 12
-// create an event that captures crystal value on player click event
-// add new clicked crystal value to extisting click value
+// create an event that captures crystal value
 // store and total all crystal values selected during game
 // compare total crystal value to random guess number.
 // if === display 'winner' --> game over and reset the games cystal values and random guess number
@@ -32,23 +31,19 @@
 //---------------------------------------------------
 
 
-// win count variable
+// player win count variable
 var winCounter = 0;
 
-// loss count varable
+// player loss count varable
 var lossCounter = 0;
 
 // random number for crystal to total to
-var KeyValueCompare;
+var keyValueCompare;
 
-// current total crystal value from player click events
+// total crystal value from click event score
 var crystalTotal = 0;
 
-<<<<<<< HEAD
-// Array to store random number for each of 4 crystals
-=======
-// current game individual crystal value from random number generator
->>>>>>> f230f827330adf545f78c606e9979f34ec06b856
+// array to store random number for each of 4 crystals
 var crystalValue = [];
 
 
@@ -57,6 +52,8 @@ var min = 0;
 
 // minimum number value for random number generator
 var max = 0;
+
+var crystalTotal = 0;
 
 
 //-------------------------------------------------------
@@ -72,8 +69,19 @@ var max = 0;
 //---------------------------------------------------
 
 
-//  Create a random number from 19-120 (for the crystal click total comparison)
 
+
+
+// user clicks button to start game
+keyValueCompare = generateRandomNumber(19,120);
+cystalValueAssign();
+numGenerate.innerHTML = keyValueCompare;
+currectCrystalTotal.innerHTML = crystalTotal;
+loss.innerHTML = lossCounter;
+win.innerHTML = winCounter;
+
+
+//  Create a random number from 19-120 (for the crystal click total comparison)
 function generateRandomNumber(min, max) {
 	var numberGenerate = Math.floor(Math.random() * (max - min + 1)) + min;
 console.log("min= " + min);
@@ -83,71 +91,69 @@ console.log(numberGenerate);
 
 	}
 
-KeyValueCompare = generateRandomNumber(19,120);
-
-
 // generate random number 4x one for each cystal values
 function cystalValueAssign() {
 // generate random number (randomize between 1 and 12) one for each cystal values
 	var min = 1;
-<<<<<<< HEAD
 	var max = 12;
 	for(i = 0; i < 4; i++) {
 		var randomNum = generateRandomNumber(min, max);
-		crystalValue.push(randomNum);
-		valueAdd(randomNum, i);
-=======
-	var max = 12
-	for(i = 0; i < 4; i++) {
-		generateRandomNumber(min, max);
-console.log("this is crystalValue " + crystalValue[i] + " " + generateRandomNumber);
-		crystalValue.push(numberGenerate);
-console.log(crystalValue);
-}
-
->>>>>>> f230f827330adf545f78c606e9979f34ec06b856
+		var crystalValueAdd = document.getElementsByClassName("crystalValue")[i];
+		crystalValueAdd.setAttribute("Data-crystal", randomNum);
 	}
 }
-cystalValueAssign();
 
-<<<<<<< HEAD
 // function value add assigns the random numbers to each of the four crystal
 function valueAdd(randomNum, i) {
-	console.log("going around " + i + " " + randomNum);
-	console.log(document.getElementsByClassName("crystalValue")[i]);
-	var crystalValueAdd = document.getElementsByClassName("crystalValue")[i];
-	crystalValueAdd.setAttribute("Data-crystal", randomNum);
+console.log("going around " + i + " " + randomNum);
+console.log(document.getElementsByClassName("crystalValue")[i]);
+
 }
 
-	document.addEventListener("click", function(event) {
-		console.log(event);	
-		var crystalTotalValue = document.querySelector(".crystalValue");
-		console.log(crystalTotalValue);	
-		crystalTotalValue.getAttribute("data-crystal")
-		console.log(crystalTotalValue.getAttribute("data-crystal"));
+// event listener for clicks on gems
+for(i = 0; i < 4; i++) {
+console.log(" i " + i);
+  	document.getElementsByClassName("crystalValue")[i].addEventListener("click", function() {
+	var crystalclickvalue = this.getAttribute("data-crystal");
+console.log("i'm a crystal data " + this.getAttribute("data-crystal") + " i " + i);
+	clickTotal(crystalclickvalue);
 	});
-
-
-	var theParent = document.querySelector("#theDude");
-theParent.addEventListener("click", doSomething, false);
- 
-function doSomething(e) {
-    if (e.target !== e.currentTarget) {
-        var clickedItem = e.target.id;
-        alert("Hello " + clickedItem);
-    }
-    e.stopPropagation();
 }
-=======
 
-// Capture cystral value on click and add to crystalTotal value
-function crystalValueAdder () {
-		crystalValue[i].addEventListener("click", function(event) {
-	console.log(event);	
+// clickTotal function calcuates plaer click totals and compairs to random generated number
+function clickTotal(clickValue) {
+	clickValue = parseInt(clickValue);
+	crystalTotal = crystalTotal + clickValue;
+	currectCrystalTotal.innerHTML = crystalTotal;
+console.log("inside crystalTotal CT " + crystalTotal);
+console.log("inside crystalTotal KVC " + keyValueCompare);
+console.log("inside crystalTotal lc " + lossCounter);
+	if ( crystalTotal === keyValueCompare ) {
+		win.innerHTML = winCounter++;
+		gReset(lossCounter, winCounter);
+	}
+	if (crystalTotal >= keyValueCompare ) {
+		loss.innerHTML = lossCounter++;
+		gReset(lossCounter, winCounter);
+	}
+}
 
-});
+// game reset generates new random values and hold current win/loss status
+function gReset(lossCounter, winCounter) {
+	keyValueCompare = generateRandomNumber(19,120);
+	cystalValueAssign();
+	numGenerate.innerHTML = keyValueCompare;
+	currectCrystalTotal.innerHTML = 0;
+}
 
-
-
->>>>>>> f230f827330adf545f78c606e9979f34ec06b856
+// 	var theParent = document.querySelector("#theDude");
+// theParent.addEventListener("click", doSomething, false);
+ 
+// function doSomething(e) {
+//     if (e.target !== e.currentTarget) {
+//         var clickedItem = e.target.id;
+//         alert("Hello " + clickedItem);
+//     }
+//     e.stopPropagation();
+// }
 

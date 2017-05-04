@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Crystal Collector Game</title>
 
 	<!-- Botstrap Latest compiled and minified CSS -->
@@ -11,7 +12,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Lekton|Ultra" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:regular,semi-bold|Bungee+Outline|Bungee+Shade" rel="stylesheet">
+ <!--  <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Lekton|Ultra" rel="stylesheet">. -->
 
 
 <!-- CSS -->
@@ -30,37 +32,33 @@
 	</div> <!-- closes BS container -->
 
 	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-xs-6 col-md-4 crystal-container crystal-a">
-				<img src="./images/Crystal1.svg" class="crystalValue" alt="crystal number 1" />
+		<div class="row justify-content-center crystalCenter">
+			<div class="col-xs-6 col-md-6 crystal-container crystal-a">
+				<img src="./images/Crystal1.svg" class="crystal-1 crystalValue" alt="crystal number 1" />
 			</div>
-			<div class="col-xs-6 col-4 crystal-container crystal-b">
-				<img src="./images/Crystal2.svg"  class="crystalValue" alt="crystal number 2" />
+			<div class="col-xs-6 col-6 crystal-container crystal-b">
+				<img src="./images/Crystal2.svg"  class="crystal-2 crystalValue" alt="crystal number 2" />
 			</div>
 		</div>
 
-		<div class="row justify-content-center">
-			<div class="col-xs-6 col-4 crystal-container crystal-c">
-				<img src="./images/Crystal3.svg" class="crystalValue" alt="crystal number 3" />
+		<div class="row justify-content-center crystalCenter">
+			<div class="col-xs-6 col-6 crystal-container crystal-c">
+				<img src="./images/Crystal3.svg" class="crystal-3 crystalValue" alt="crystal number 3" />
 			</div>
-<<<<<<< HEAD
-			<div class="col-xs-6 col-md-4 crystal-container crystal-d">
-				<img src="./images/Crystal4.svg"  class="crystalValue"  alt="crystal number 4" />
-=======
-			<div class="col-xs-6 col-md-4 crystal-container crystal-4">
-				<img src="./images/Crystal4.svg" class="crystalValue" alt="crystal number 4">
->>>>>>> f230f827330adf545f78c606e9979f34ec06b856
+			<div class="col-xs-6 col-md-6 crystal-container crystal-d">
+				<img src="./images/Crystal4.svg"  class="crystal-4 crystalValue"  alt="crystal number 4" />
 			</div>
 		</div>
 
 	    <div class="container playerResult">    
 	        <div class="row">
-	            <div class="col-xs-12 col-md-4 result">Match this: <span id="numGenerate"></span></div>
+	            <div class="col-xs-6 col-md-6 result">Cyrstal match: <span id="numGenerate"></span></div>
+	             <div class="col-xs-6 col-md-6 result">Currrent value: <span id="currectCrystalTotal"></span></div>
 	        </div>
 
 	        <div class="row">
-	            <div class="col-xs-3 col-md-3 result">wins: <span id="wins"></span></div>
-	            <div class="col-xs-3 col-md-3 result">losses: <span id="losses"></span></div>
+	            <div class="col-xs-6 col-md-6 result">wins: <span id="win"></span></div>
+	            <div class="col-xs-6 col-md-6 result">losses: <span id="loss"></span></div>
 	        </div>
 		</div>
 
@@ -69,6 +67,7 @@
 			<div class=""></div>
 		</div>
 	</div> <!-- closes BS container -->
+
 </body>
 <script type="text/javascript" src="./assets/crystal-main.js"></script>
 </html>
